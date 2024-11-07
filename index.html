@@ -11,7 +11,7 @@
             overflow: auto;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Alinha no topo */
         }
         canvas {
             border: 1px solid #000;
@@ -48,7 +48,7 @@
                     const context = canvas.getContext('2d');
                     canvas.height = viewport.height;
                     canvas.width = viewport.width;
-                    
+
                     // Adiciona o canvas ao container
                     document.getElementById('pdf-container').appendChild(canvas);
                     
@@ -63,7 +63,6 @@
 
             // Renderiza a primeira página do PDF
             renderPage(1);
-
         }).catch(function(error) {
             console.error('Erro ao carregar o PDF:', error);
         });
